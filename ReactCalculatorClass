@@ -1,0 +1,706 @@
+class App extends React.Component {
+ constructor(props) {
+    super(props);
+   this.state={
+     currVal:"0",
+     prevVal:"0",
+      inviVal:"",
+      reset:true
+   }
+   this.starter = this.starter.bind(this);
+    this.test = this.test.bind(this);
+   this.zerotest = this.zerotest.bind(this);
+    this.twotest = this.twotest.bind(this);
+   this.threetest = this.threetest.bind(this);
+   this.fourtest = this.fourtest.bind(this);
+   this.fivetest = this.fivetest.bind(this);
+   this.sixtest = this.sixtest.bind(this);
+   this.seventest = this.seventest.bind(this);
+   this.eighttest = this.eighttest.bind(this);
+   this.ninetest = this.ninetest.bind(this);
+    this.addtest = this.addtest.bind(this);
+   this.equaltest = this.equaltest.bind(this);
+   this.subtracttest=this.subtracttest.bind(this);
+   this.multiplytest=this.multiplytest.bind(this);
+   this.dividetest=this.dividetest.bind(this);
+   this.decimalTest=this.decimalTest.bind(this);
+  };
+starter(){
+  this.setState({
+     currVal:"0",
+     prevVal:"0",
+     inviVal:"",
+    reset:true
+  });
+}
+  decimalTest(){
+    let one;
+    let check;
+    let test=this.state.currVal;
+    let result = test.includes(".");
+    
+     if(result === false){
+     if(this.state.prevVal.charAt(this.state.prevVal.length-1)=="+"||this.state.prevVal.charAt(this.state.prevVal.length-1)=="-"||this.state.prevVal.charAt(this.state.prevVal.length-1)=="/"||this.state.prevVal.charAt(this.state.prevVal.length-1)=="*")
+       {
+         check="0.";
+          one=this.state.prevVal.concat("0.");
+       }
+    else{
+      check=this.state.currVal.concat(".");
+       one=this.state.prevVal.concat(".");
+    }
+     
+       
+       
+       
+  
+     
+        
+       
+     if(this.state.inviVal !==""){
+       this.setState({
+     currVal:"0.",
+     prevVal:"0.",
+       inviVal:"" ,
+          reset:false
+  });
+     }
+    else{
+  this.setState({
+     currVal:check,
+     prevVal:one,
+     reset:false
+  });}
+    }
+}
+  test(){
+    let one;
+    let check;
+    
+     if(this.state.prevVal.charAt(this.state.prevVal.length-1)=="+"||this.state.prevVal.charAt(this.state.prevVal.length-1)=="-"||this.state.prevVal.charAt(this.state.prevVal.length-1)=="/"||this.state.prevVal.charAt(this.state.prevVal.length-1)=="*")
+       {
+         check="1";
+         
+       }
+    else{
+      check=this.state.currVal.concat("1");
+       
+    }
+  if(this.state.prevVal=="0")
+    {
+      one="1";
+      check="1";
+    }
+     else
+       {
+         one=this.state.prevVal.concat("1");
+       }
+     if(this.state.inviVal !==""){
+       this.setState({
+     currVal:"1",
+     prevVal:"1",
+       inviVal:""  ,
+          reset:false
+  });
+     }
+    else{
+  this.setState({
+     currVal:check,
+     prevVal:one,
+     reset:false
+  });}
+}
+  zerotest(){
+    let zero;
+    let check;
+    
+     if(this.state.prevVal.charAt(this.state.prevVal.length-1)=="+"||this.state.prevVal.charAt(this.state.prevVal.length-1)=="-"||this.state.prevVal.charAt(this.state.prevVal.length-1)=="/"||this.state.prevVal.charAt(this.state.prevVal.length-1)=="*")
+       {
+         check="0";
+         
+       }
+    else{
+      check=this.state.currVal.concat("0");
+       
+    }
+  if(this.state.prevVal=="0")
+    {
+      zero="0";
+       check="0";
+    }
+     else
+       {
+         zero=this.state.prevVal.concat("0");
+       }
+     if(this.state.inviVal !==""){
+       this.setState({
+     currVal:"0",
+     prevVal:"0",
+       inviVal:""  ,
+          reset:false
+  });
+     }
+    else{
+  this.setState({
+     currVal:check,
+     prevVal:zero,
+     reset:false
+  });}
+}
+  twotest(){
+    let two;
+    let check;
+    
+     if(this.state.prevVal.charAt(this.state.prevVal.length-1)=="+"||this.state.prevVal.charAt(this.state.prevVal.length-1)=="-"||this.state.prevVal.charAt(this.state.prevVal.length-1)=="/"||this.state.prevVal.charAt(this.state.prevVal.length-1)=="*")
+       {
+         check="2";
+         
+       }
+    else{
+      check=this.state.currVal.concat("2");
+       
+    }
+  if(this.state.prevVal=="0")
+    {
+      two="2";
+      check="2";
+    }
+     else
+       {
+         two=this.state.prevVal.concat("2");
+       }
+     if(this.state.inviVal !==""){
+       this.setState({
+     currVal:"2",
+     prevVal:"2",
+       inviVal:"",
+          reset:false
+  });
+     }
+    else{
+  this.setState({
+     currVal:check,
+     prevVal:two,
+     reset:false
+  });}
+}
+  fourtest(){
+    let four;
+    let check;
+    
+     if(this.state.prevVal.charAt(this.state.prevVal.length-1)=="+"||this.state.prevVal.charAt(this.state.prevVal.length-1)=="-"||this.state.prevVal.charAt(this.state.prevVal.length-1)=="/"||this.state.prevVal.charAt(this.state.prevVal.length-1)=="*")
+       {
+         check="4";
+         
+       }
+    else{
+      check=this.state.currVal.concat("4");
+       
+    }
+  if(this.state.prevVal=="0")
+    {
+      four="4";
+      check="4";
+    }
+     else
+       {
+         four=this.state.prevVal.concat("4");
+       }
+     if(this.state.inviVal !==""){
+       this.setState({
+     currVal:"4",
+     prevVal:"4",
+       inviVal:""  ,
+          reset:false
+  });
+     }
+    else{
+  this.setState({
+     currVal:check,
+     prevVal:four,
+     reset:false
+  });}
+}
+  threetest(){
+    let three;
+    let check;
+    
+     if(this.state.prevVal.charAt(this.state.prevVal.length-1)=="+"||this.state.prevVal.charAt(this.state.prevVal.length-1)=="-"||this.state.prevVal.charAt(this.state.prevVal.length-1)=="/"||this.state.prevVal.charAt(this.state.prevVal.length-1)=="*")
+       {
+         check="3";
+         
+       }
+    else{
+      check=this.state.currVal.concat("3");
+       
+    }
+  if(this.state.prevVal=="0")
+    {
+      three="3";
+      check="3";
+    }
+     else
+       {
+         three=this.state.prevVal.concat("3");
+       }
+     if(this.state.inviVal !==""){
+       this.setState({
+     currVal:"3",
+     prevVal:"3",
+       inviVal:""  ,
+          reset:false
+  });
+     }
+    else{
+  this.setState({
+     currVal:check,
+     prevVal:three,
+     reset:false
+  });}
+}
+  fivetest(){
+    let five;
+    let check;
+    
+     if(this.state.prevVal.charAt(this.state.prevVal.length-1)=="+"||this.state.prevVal.charAt(this.state.prevVal.length-1)=="-"||this.state.prevVal.charAt(this.state.prevVal.length-1)=="/"||this.state.prevVal.charAt(this.state.prevVal.length-1)=="*")
+       {
+         check="5";
+         
+       }
+    else{
+      check=this.state.currVal.concat("5");
+       
+    }
+  if(this.state.prevVal=="0")
+    {
+      five="5";
+      check="5";
+    }
+     else
+       {
+         five=this.state.prevVal.concat("5");
+       }
+     if(this.state.inviVal !==""){
+       this.setState({
+     currVal:"5",
+     prevVal:"5",
+       inviVal:"" ,
+          reset:false
+  });
+     }
+    else{
+  this.setState({
+     currVal:check,
+     prevVal:five,
+     reset:false
+  });}
+}
+  sixtest(){
+    let six;
+    let check;
+    
+     if(this.state.prevVal.charAt(this.state.prevVal.length-1)=="+"||this.state.prevVal.charAt(this.state.prevVal.length-1)=="-"||this.state.prevVal.charAt(this.state.prevVal.length-1)=="/"||this.state.prevVal.charAt(this.state.prevVal.length-1)=="*")
+       {
+         check="6";
+         
+       }
+    else{
+      check=this.state.currVal.concat("6");
+       
+    }
+  if(this.state.prevVal=="0")
+    {
+      six="6";
+      check="6";
+    }
+     else
+       {
+         six=this.state.prevVal.concat("6");
+       }
+     if(this.state.inviVal !==""){
+       this.setState({
+     currVal:"6",
+     prevVal:"6",
+       inviVal:""  ,
+          reset:false
+  });
+     }
+    else{
+  this.setState({
+     currVal:check,
+     prevVal:six,
+     reset:false
+  });}
+}
+  seventest(){
+    let seven;
+    let check;
+    
+     if(this.state.prevVal.charAt(this.state.prevVal.length-1)=="+"||this.state.prevVal.charAt(this.state.prevVal.length-1)=="-"||this.state.prevVal.charAt(this.state.prevVal.length-1)=="/"||this.state.prevVal.charAt(this.state.prevVal.length-1)=="*")
+       {
+         check="7";
+         
+       }
+    else{
+      check=this.state.currVal.concat("7");
+       
+    }
+  if(this.state.prevVal=="0")
+    {
+      seven="7";
+      check="7";
+    }
+     else
+       {
+         seven=this.state.prevVal.concat("7");
+       }
+     if(this.state.inviVal !==""){
+       this.setState({
+     currVal:"7",
+     prevVal:"7",
+       inviVal:"",
+          reset:false
+  });
+     }
+    else{
+  this.setState({
+     currVal:check,
+     prevVal:seven,
+     reset:false
+  });}
+}
+  eighttest(){
+    let eight;
+    let check;
+    
+     if(this.state.prevVal.charAt(this.state.prevVal.length-1)=="+"||this.state.prevVal.charAt(this.state.prevVal.length-1)=="-"||this.state.prevVal.charAt(this.state.prevVal.length-1)=="/"||this.state.prevVal.charAt(this.state.prevVal.length-1)=="*")
+       {
+         check="8";
+         
+       }
+    else{
+      check=this.state.currVal.concat("8");
+       
+    }
+  if(this.state.prevVal=="0")
+    {
+      eight="8";
+      check="8";
+    }
+     else
+       {
+         eight=this.state.prevVal.concat("8");
+       }
+     if(this.state.inviVal !==""){
+       this.setState({
+     currVal:"8",
+     prevVal:"8",
+       inviVal:""  ,
+          reset:false
+  });
+     }
+    else{
+  this.setState({
+     currVal:check,
+     prevVal:eight,
+     reset:false
+  });}
+}
+  ninetest(){
+    let nine;
+    let check;
+    
+     if(this.state.prevVal.charAt(this.state.prevVal.length-1)=="+"||this.state.prevVal.charAt(this.state.prevVal.length-1)=="-"||this.state.prevVal.charAt(this.state.prevVal.length-1)=="/"||this.state.prevVal.charAt(this.state.prevVal.length-1)=="*")
+       {
+         check="9";
+         
+       }
+    else{
+      check=this.state.currVal.concat("9");
+       
+    }
+  if(this.state.prevVal=="0")
+    {
+      nine="9";
+      check="9";
+    }
+     else
+       {
+         nine=this.state.prevVal.concat("9");
+       }
+     if(this.state.inviVal !==""){
+       this.setState({
+     currVal:"9",
+     prevVal:"9",
+       inviVal:"" ,
+          reset:false
+  });
+     }
+    else{
+  this.setState({
+     currVal:check,
+     prevVal:nine,
+     reset:false
+  });}
+}
+  addtest(){
+    let add=this.state.prevVal;
+    let adds=this.state.inviVal;
+    
+    if(this.state.inviVal !=="")
+      {
+        if(this.state.inviVal.charAt(this.state.inviVal.length-1)=="+"||this.state.inviVal.charAt(this.state.inviVal.length-1)=="-"||this.state.inviVal.charAt(this.state.inviVal.length-1)=="*"||this.state.inviVal.charAt(this.state.inviVal.length-1)=="/"){
+           adds=adds.slice(0, -1);
+           if(this.state.inviVal.charAt(this.state.inviVal.length-2)=="+"||this.state.inviVal.charAt(this.state.inviVal.length-2)=="-"||this.state.inviVal.charAt(this.state.inviVal.length-2)=="*"||this.state.inviVal.charAt(this.state.inviVal.length-2)=="/") 
+     {
+       adds=adds.slice(0, -1);
+     } 
+        }
+     
+        if(this.state.reset){
+         adds="+";
+       } 
+        else{
+           adds=adds.concat("+");
+        }
+      { this.setState({
+     currVal:"+",
+     prevVal:adds,
+        inviVal:"",
+         reset:false
+  });}
+      }
+    else{
+      if(this.state.prevVal.charAt(this.state.prevVal.length-1)=="+"||this.state.prevVal.charAt(this.state.prevVal.length-1)=="-"||this.state.prevVal.charAt(this.state.prevVal.length-1)=="/"||this.state.prevVal.charAt(this.state.prevVal.length-1)=="*"){
+         add=add.slice(0, -1);
+        if(this.state.prevVal.charAt(this.state.prevVal.length-2)=="+"||this.state.prevVal.charAt(this.state.prevVal.length-2)=="-"||this.state.prevVal.charAt(this.state.prevVal.length-2)=="/"||this.state.prevVal.charAt(this.state.prevVal.length-2)=="*") 
+     {
+      add=add.slice(0, -1);
+     } 
+      }
+      
+        if(this.state.reset){
+         add="+";
+       } 
+        else{
+           add=add.concat("+");
+        }
+  this.setState({
+     currVal:"+",
+     prevVal:add,
+     reset:false
+  });
+    }
+}
+  multiplytest(){
+    let add=this.state.prevVal;
+    let adds=this.state.inviVal;
+    
+    if(this.state.inviVal !=="")
+      {
+         if(this.state.inviVal.charAt(this.state.inviVal.length-1)=="+"||this.state.inviVal.charAt(this.state.inviVal.length-1)=="-"||this.state.inviVal.charAt(this.state.inviVal.length-1)=="*"||this.state.inviVal.charAt(this.state.inviVal.length-1)=="/"){
+           adds=adds.slice(0, -1);
+           if(this.state.inviVal.charAt(this.state.inviVal.length-2)=="+"||this.state.inviVal.charAt(this.state.inviVal.length-2)=="-"||this.state.inviVal.charAt(this.state.inviVal.length-2)=="*"||this.state.inviVal.charAt(this.state.inviVal.length-2)=="/") 
+     {
+       adds=adds.slice(0, -1);
+     } 
+        }
+      
+         if(this.state.reset){
+         adds="*";
+       } 
+        else{
+           adds=adds.concat("*");
+        }
+      { this.setState({
+     currVal:"*",
+     prevVal:adds,
+        inviVal:"",
+         reset:false
+  });}
+      }
+    else{
+     if(this.state.prevVal.charAt(this.state.prevVal.length-1)=="+"||this.state.prevVal.charAt(this.state.prevVal.length-1)=="-"||this.state.prevVal.charAt(this.state.prevVal.length-1)=="/"||this.state.prevVal.charAt(this.state.prevVal.length-1)=="*"){
+         add=add.slice(0, -1);
+       if(this.state.prevVal.charAt(this.state.prevVal.length-2)=="+"||this.state.prevVal.charAt(this.state.prevVal.length-2)=="-"||this.state.prevVal.charAt(this.state.prevVal.length-2)=="/"||this.state.prevVal.charAt(this.state.prevVal.length-2)=="*") 
+     {
+      add=add.slice(0, -1);
+     } 
+      }
+      
+       if(this.state.reset){
+         add="*";
+       } 
+        else{
+           add=add.concat("*");
+        }
+  this.setState({
+     currVal:"*",
+     prevVal:add,
+     reset:false
+  });
+    }
+}
+  dividetest(){
+    let add=this.state.prevVal;
+    let adds=this.state.inviVal;
+    
+    if(this.state.inviVal !=="")
+      {
+        if(this.state.inviVal.charAt(this.state.inviVal.length-1)=="+"||this.state.inviVal.charAt(this.state.inviVal.length-1)=="-"||this.state.inviVal.charAt(this.state.inviVal.length-1)=="*"||this.state.inviVal.charAt(this.state.inviVal.length-1)=="/"){
+           adds=adds.slice(0, -1);
+          if(this.state.inviVal.charAt(this.state.inviVal.length-2)=="+"||this.state.inviVal.charAt(this.state.inviVal.length-2)=="-"||this.state.inviVal.charAt(this.state.inviVal.length-2)=="*"||this.state.inviVal.charAt(this.state.inviVal.length-2)=="/") 
+     {
+       adds=adds.slice(0, -1);
+     } 
+        }
+      
+        if(this.state.reset){
+         adds="/";
+       } 
+        else{
+           adds=adds.concat("/");
+        }
+      { this.setState({
+     currVal:"/",
+     prevVal:adds,
+        inviVal:"",
+         reset:false
+  });}
+      }
+    else{
+      if(this.state.prevVal.charAt(this.state.prevVal.length-1)=="+"||this.state.prevVal.charAt(this.state.prevVal.length-1)=="-"||this.state.prevVal.charAt(this.state.prevVal.length-1)=="/"||this.state.prevVal.charAt(this.state.prevVal.length-1)=="*"){
+         add=add.slice(0, -1);
+        if(this.state.prevVal.charAt(this.state.prevVal.length-2)=="+"||this.state.prevVal.charAt(this.state.prevVal.length-2)=="-"||this.state.prevVal.charAt(this.state.prevVal.length-2)=="/"||this.state.prevVal.charAt(this.state.prevVal.length-2)=="*") 
+     {
+      add=add.slice(0, -1);
+     } 
+      }
+      
+         if(this.state.reset){
+         add="/";
+       } 
+        else{
+           add=add.concat("/");
+        }
+  this.setState({
+     currVal:"/",
+     prevVal:add,
+     reset:false
+  });
+    }
+}
+  subtracttest(){
+    let add=this.state.prevVal;
+    let adds=this.state.inviVal;
+    
+    if(this.state.inviVal !=="")
+      {
+        
+      if(this.state.inviVal.charAt(this.state.inviVal.length-1)=="-"&&this.state.inviVal.charAt(this.state.inviVal.length-2)=="-"||this.state.inviVal.charAt(this.state.inviVal.length-1)=="-"&&this.state.inviVal.charAt(this.state.inviVal.length-2)=="+"||this.state.inviVal.charAt(this.state.inviVal.length-1)=="-"&&this.state.inviVal.charAt(this.state.inviVal.length-2)=="*"||this.state.inviVal.charAt(this.state.inviVal.length-1)=="-"&&this.state.inviVal.charAt(this.state.inviVal.length-2)=="/") 
+     {
+       adds=adds.slice(0, -1);
+     } 
+       
+       if(this.state.reset){
+         adds="-";
+       } 
+        else{
+           adds=adds.concat("-");
+        }
+      { this.setState({
+     currVal:"-",
+     prevVal:adds,
+        inviVal:"", 
+        reset:false
+  });}
+      }
+    else{
+      
+      if(this.state.prevVal.charAt(this.state.prevVal.length-1)=="-"&&this.state.prevVal.charAt(this.state.prevVal.length-2)=="-"||this.state.prevVal.charAt(this.state.prevVal.length-1)=="-"&&this.state.prevVal.charAt(this.state.prevVal.length-2)=="+"||this.state.prevVal.charAt(this.state.prevVal.length-1)=="-"&&this.state.prevVal.charAt(this.state.prevVal.length-2)=="*"||this.state.prevVal.charAt(this.state.prevVal.length-1)=="-"&&this.state.prevVal.charAt(this.state.prevVal.length-2)=="/") 
+     {
+      add=add.slice(0, -1);
+     } 
+     if(this.state.reset){
+         add="-";
+       } 
+        else{
+           add=add.concat("-");
+        }
+  this.setState({
+     currVal:"-",
+     prevVal:add,
+    reset:false
+  });
+    }
+}
+  equaltest(){
+   let equalEval;
+   let stringVal; 
+    let stringo;
+    stringo=this.state.prevVal;
+  
+   if(this.state.prevVal.charAt(this.state.prevVal.length-1)=="-"&&this.state.prevVal.charAt(this.state.prevVal.length-2)=="-"||this.state.prevVal.charAt(this.state.prevVal.length-1)=="-"&&this.state.prevVal.charAt(this.state.prevVal.length-2)=="+"||this.state.prevVal.charAt(this.state.prevVal.length-1)=="-"&&this.state.prevVal.charAt(this.state.prevVal.length-2)=="*"||this.state.prevVal.charAt(this.state.prevVal.length-1)=="-"&&this.state.prevVal.charAt(this.state.prevVal.length-2)=="/")
+      {stringo=stringo.slice(0, -1);}
+    
+      if(this.state.prevVal.charAt(this.state.prevVal.length-1)=="+"||this.state.prevVal.charAt(this.state.prevVal.length-1)=="-"||this.state.prevVal.charAt(this.state.prevVal.length-1)=="/"||this.state.prevVal.charAt(this.state.prevVal.length-1)=="*") 
+     {stringo=stringo.slice(0, -1);}
+     
+     equalEval=Math.round(1000000000000 *eval(stringo.replace(/--/g, "+")))/1000000000000;
+ stringVal=stringo.concat("=",String(equalEval)); 
+    
+  this.setState({
+     currVal:String(equalEval),
+     prevVal:stringVal,
+    inviVal:String(equalEval),
+    reset:false
+  });
+}
+  render() {
+     
+    
+    return (
+    <div className="App">
+     
+      
+      <div className="first">
+         <output className="display all" >{this.state.prevVal}</output>
+        <output className="display" id="display">{this.state.currVal}</output>
+        <div>
+          <button type="button" className="ac max" id="clear"  onClick={this.starter}>AC</button>
+          <button type="button" className="slash" id="divide" onClick={this.dividetest}>/</button>
+          <button type="button" className="x" id="multiply" onClick={this.multiplytest}>X</button>
+      </div>
+         <div>
+          <button type="button" id="seven" onClick={this.seventest}>7</button>
+          <button type="button" className="slash" id="eight" onClick={this.eighttest}>8</button>
+          <button type="button" className="x" id="nine" onClick={this.ninetest}>9</button>
+           <button type="button" className="x" id="subtract" onClick={this.subtracttest}>-</button>
+      </div>
+         <div>
+          <button type="button" id="four" onClick={this.fourtest}>4</button>
+          <button type="button" className="slash" id="five" onClick={this.fivetest}>5</button>
+          <button type="button" className="x" id="six" onClick={this.sixtest}>6</button>
+           <button type="button" className="x" id="add"  onClick={this.addtest}>+</button>
+      </div>
+         <div>
+          <button id="one" type="button" onClick={this.test}>1</button>
+          <button type="button" className="slash" id="two" onClick={this.twotest}>2</button>
+          <button type="button" className="x" id="three" onClick={this.threetest}>3</button>
+           
+             <button type="button" id="equals" className="equals" onClick={this.equaltest}>=</button>
+               
+             
+      </div>
+         <div>
+          <button type="button" id="zero" className="ac 0" onClick={this.zerotest}>0</button>
+          <button type="button" className="slash ac dot" id="decimal" onClick={this.decimalTest}>.</button>
+         
+      </div>
+        
+      </div>
+        <p>by_Kordian_Breitenbach</p>
+    </div>
+  );}
+};
+ReactDOM.render(<App/>,document.getElementById('app'))
