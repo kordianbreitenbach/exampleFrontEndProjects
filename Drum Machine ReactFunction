@@ -1,0 +1,105 @@
+import * as React from "https://cdn.skypack.dev/react@17.0.1";
+import * as ReactDOM from "https://cdn.skypack.dev/react-dom@17.0.1";
+const fccsounds = [
+  {
+    keyCode: 81,
+    key: 'Q',
+    id: 'Heater-1',
+    url: 'https://s3.amazonaws.com/freecodecamp/drums/Heater-1.mp3'
+  },
+  {
+    keyCode: 87,
+    key: 'W',
+    id: 'Heater-2',
+    url: 'https://s3.amazonaws.com/freecodecamp/drums/Heater-2.mp3'
+  },
+  {
+    keyCode: 69,
+    key: 'E',
+    id: 'Heater-3',
+    url: 'https://s3.amazonaws.com/freecodecamp/drums/Heater-3.mp3'
+  },
+  {
+    keyCode: 65,
+    key: 'A',
+    id: 'Heater-4',
+    url: 'https://s3.amazonaws.com/freecodecamp/drums/Heater-4_1.mp3'
+  },
+  {
+    keyCode: 83,
+    key: 'S',
+    id: 'Clap',
+    url: 'https://s3.amazonaws.com/freecodecamp/drums/Heater-6.mp3'
+  },
+  {
+    keyCode: 68,
+    key: 'D',
+    id: 'Open-HH',
+    url: 'https://s3.amazonaws.com/freecodecamp/drums/Dsc_Oh.mp3'
+  },
+  {
+    keyCode: 90,
+    key: 'Z',
+    id: "Kick-n'-Hat",
+    url: 'https://s3.amazonaws.com/freecodecamp/drums/Kick_n_Hat.mp3'
+  },
+  {
+    keyCode: 88,
+    key: 'X',
+    id: 'Kick',
+    url: 'https://s3.amazonaws.com/freecodecamp/drums/RP4_KICK_1.mp3'
+  },
+  {
+    keyCode: 67,
+    key: 'C',
+    id: 'Closed-HH',
+    url: 'https://s3.amazonaws.com/freecodecamp/drums/Cev_H2.mp3'
+  }
+];
+
+
+
+const Keyboard=({sounds})=>{
+  return fccsounds.map((sound)=>{ 
+     
+    React.useEffect(() => {
+      document.addEventListener("keydown", handle);
+  },[])
+    const handle=(e)=>{
+      if(sound.keyCode===e.keyCode)
+        {
+         sounds(sound.key,sound.id)
+        }
+    }
+    return (<button onClick={()=>sounds(sound.key,sound.id)} type="button" id={sound.id} className="drum-pad">     
+      <audio className="clip" id={sound.key} src={sound.url} />
+      {sound.key}  
+    </button>) 
+  })
+}
+const App=()=>{
+  const [soundName,setSoundName]=React.useState("");
+  const sounds=(soundKey,soundName)=>{
+    setSoundName(soundName);
+    const music=document.getElementById(soundKey);
+    music.currentTime=0;
+    music.play();
+    
+  }
+  return (
+    <div id="drum-machine" className="App">
+      <div className="outer">
+      <div className="contain">
+        <Keyboard sounds={sounds}/>
+       
+      </div>
+         <h3 id="display">{soundName}</h3>
+      </div>
+    </div>
+  );
+}
+
+
+
+
+ReactDOM.render(<App/>,document.getElementById('this'))
