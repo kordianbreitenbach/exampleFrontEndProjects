@@ -1,0 +1,60 @@
+
+
+marked.setOptions({
+  breaks: true,
+  highlight: function (code) {
+    return Prism.highlight(code, Prism.languages.javascript, 'javascript');
+  }
+});
+const renderer = new marked.Renderer();
+renderer.link = function (href, title, text) {
+  return `<a target="_blank" href="${href}">${text}</a>`;
+};
+const defContent= 
+`
+![image](https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/Codomain2.SVG/640px-Codomain2.SVG.png)
+- # one
+ - ## two
+ - ### three
+ \`<div>Inline code</div>\`
+ **bold text**
+
+[link](https://www.youtube.com/watch?v=Qf1FHLjoRRc&ab_channel=Korn-Topic)
+\`\`\`
+const codeBlock = (parameter) => {
+    if(true) {
+        return yes
+    }
+}
+\`\`\`
+> Block Quote
+
+ `
+       
+ 
+const App =()=>{
+  const [edit,setEdit]=React.useState(defContent);
+  const [preview,setPreview]=React.useState("");
+  const change=(event)=>{
+    
+    setEdit(event.target.value);
+
+  }
+  return(
+<div className="contain">
+  <textarea value={edit}  onChange={change} id="editor" name="textAreaName" >
+testing text
+   </textarea>
+  
+ 
+  <div id="preview" 
+    dangerouslySetInnerHTML={{
+      __html: marked(edit, { renderer: renderer })
+    }}
+    />
+</div>
+  )
+}
+
+
+ReactDOM.render(<App/>,document.getElementById('app'))
