@@ -1,0 +1,117 @@
+
+const App=()=>{
+  const [color,setColor]=React.useState("black");
+ const [brk,setBrk]=React.useState(5);
+  const[length,setLength]=React.useState(25);
+  const[time,setTime]=React.useState(1500);
+  const[playing,setPlaying]=React.useState(false);
+  const[sessionStatus,setSessionStatus]=React.useState("session");
+ 
+  const format = () => {
+    const minutes = Math.floor(time / 60);
+    const seconds = time - minutes * 60;
+    const formattedSeconds = seconds < 10 ? '0' + seconds : seconds;
+    const formattedMinutes = minutes < 10 ? '0' + minutes : minutes;
+    return `${formattedMinutes}:${formattedSeconds}`;
+  }
+  
+   const title = sessionStatus === "session" ? "Session" : "Break";
+  const reset=()=>{
+    setSessionStatus("session");
+    setColor("black");
+    clearTimeout(timer);
+  
+    setBrk(5);
+    setLength(25);
+    setTime(1500);
+    setPlaying(false);
+     const audio = document.getElementById("beep");
+    audio.pause()
+    audio.currentTime = 0;
+  }
+  const sesBreak = () => {
+   const audio = document.getElementById("beep");
+    if(!time && sessionStatus === "session"){
+       setTime(brk*60);
+      setSessionStatus("break")
+      audio.play()
+    }
+    if(!time && sessionStatus === "break"){
+      setTime(length*60);
+      setSessionStatus("session")
+      audio.pause()
+      audio.currentTime = 0;
+    }
+  }
+   const timer= setTimeout(() => {
+    if(time>0 && playing){
+     
+      setTime(time - 1);
+     
+    }
+   
+       
+  }, 1000);
+  const test=()=>{
+    if(!time){
+      setColor("red");
+    }
+    if(time==brk*60-5&&color!=="black"||time==length*60-5&&color!=="black"){
+      setColor("black");
+    }
+  }
+   React.useEffect(() => {
+    timer
+    sesBreak()
+    test()
+    
+   
+   
+
+
+    
+    
+   
+   
+  }, [time,playing,color]);
+  return(
+  <div className="contain">
+      <div className="dec">
+      <div className="maine"><h1 id="break-label">Break Length</h1>
+      <div className="look">
+       <button disabled={playing} type="button" id="break-decrement" onClick={() => {if(brk>1)setBrk(brk-1)}}>decrease</button>
+       <p className="number" id="break-length">{brk}</p>
+      <button disabled={playing} type="button" id="break-increment" onClick={() => {if(brk<60)setBrk(brk+1)}}>increase</button>
+        
+        </div></div>
+      <div className="maine"><h1 id="session-label">Session Length</h1>
+      <div  className="look">
+      
+     
+      <button disabled={playing} type="button" id="session-decrement" onClick={() => {if(length>1){setLength(length-1); setTime(time-60); }}}>decrease</button>
+        <p className="number" id="session-length">{length}</p>
+       <button disabled={playing} type="button" id="session-increment" onClick={()=>{if(length<60){setLength(length+1); setTime(time+60);}}}>increase</button>
+        </div></div>
+      </div>
+     
+     <div className="looked">
+      <h2 id="timer-label">{title}</h2>
+      <h2 id="time-left" style={{color: color}}>{format()}</h2>
+       </div>
+      <div  className="look">
+      <button id="start_stop" onClick={()=>{setPlaying(!playing);  clearTimeout(timer);}}>start/stop</button>
+    
+      <button id="reset" onClick={reset}>reset</button>
+      </div>
+      <audio
+      id="beep" 
+      preload="auto"
+      src="https://raw.githubusercontent.com/freeCodeCamp/cdn/master/build/testable-projects-fcc/audio/BeepSound.wav"
+    />
+      </div>
+  )
+  
+}
+
+
+ReactDOM.render(<App/>,document.getElementById('app'))
