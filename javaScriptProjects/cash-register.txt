@@ -1,0 +1,174 @@
+function checkCashRegister(price, cash, cid) {
+  
+ let dif=cash-price;
+  let insufficient= {status: "INSUFFICIENT_FUNDS", change: []};
+  let closed={status: "CLOSED", change: cid};
+    let test=cid[0][1]+cid[1][1]+cid[2][1]+cid[3][1]+cid[4][1]+cid[5][1]+cid[6][1]+cid[7][1]+cid[8][1];
+    if(dif==test){
+  return closed;
+  }
+   let counter=0;
+   
+   if(dif>=100)
+   {
+     counter+=cid[8][1];
+   }
+   if(dif>=20)
+   {
+     counter+=cid[7][1];
+   }
+   if(dif>=10)
+   {
+     counter+=cid[6][1];
+   }
+   if(dif>=5)
+   {
+     counter+=cid[5][1];
+   }
+   if(dif>=1)
+   {
+     counter+=cid[4][1];
+   }
+   if(dif>=0.25)
+   {
+     counter+=cid[3][1];
+   }
+   if(dif>=0.1)
+   {
+     counter+=cid[2][1];
+   }
+   if(dif>=0.05)
+   {
+     counter+=cid[1][1];
+   }
+   if(dif>=0.01)
+   {
+     counter+=cid[0][1];
+   }
+
+ 
+if(counter<dif)
+{
+  return insufficient;
+}
+else{
+ 
+let arrayA=["ONE HUNDRED",0];
+let arrayB=["TWENTY",0];
+let arrayC=["TEN",0];
+let arrayD=["FIVE",0];
+let arrayE=["ONE",0];
+let arrayF=["QUARTER",0];
+let arrayG=["DIME",0];
+let arrayH=["NICKEL",0];
+let arrayI=["PENNY",0];
+let tranformedArray=[];
+console.log(dif);
+ while(dif>=100&&cid[8][1]>=100)
+ {
+  dif-=100;
+  cid[8][1]-=100;
+  arrayA[1]+=100;
+ }
+ console.log(dif);
+ dif=Math.round(dif * 100) / 100;
+  while(dif>=20&&cid[7][1]>=20)
+ {
+  dif-=20;
+  cid[7][1]-=20;
+  arrayB[1]+=20;
+ }
+ dif=Math.round(dif * 100) / 100;
+ console.log(dif);
+  while(dif>=10&&cid[6][1]>=10)
+ {
+  dif-=10;
+  cid[6][1]-=10;
+  arrayC[1]+=10;
+ }
+    
+ console.log(dif);
+  while(dif>=5&&cid[5][1]>=5)
+ {
+  dif-=5;
+  cid[5][1]-=5;
+  arrayD[1]+=5;
+ }
+ console.log(dif);
+ while(dif>=1&&cid[4][1]>=1)
+ {
+  dif-=1;
+  cid[4][1]-=1;
+  arrayE[1]+=1;
+ }
+ console.log(dif);
+ while(dif>=0.25&&cid[3][1]>=0.25)
+ {
+  dif-=0.25;
+  cid[3][1]-=0.25;
+  arrayF[1]+=0.25;
+ }
+ console.log(dif);
+ while(dif>=0.1&&cid[2][1]>=0.1)
+ {
+  dif-=0.1;
+  cid[2][1]-=0.1;
+  arrayG[1]+=0.1;
+ }
+ console.log(dif);
+ while(dif>=0.05&&cid[1][1]>=0.05)
+ {
+  dif-=0.05;
+  cid[1][1]-=0.05;
+  arrayH[1]+=0.05;
+ }
+ console.log(dif);
+  while(dif>=0.01&&cid[0][1]>=0.01)
+ {
+  dif-=0.01;
+  cid[0][1]-=0.01;
+  arrayI[1]+=0.01;
+ }
+ console.log(dif);
+if(arrayA[1]>0){
+tranformedArray.push(arrayA);
+}
+if(arrayB[1]>0){
+tranformedArray.push(arrayB);
+}
+if(arrayC[1]>0){
+tranformedArray.push(arrayC);
+}
+if(arrayD[1]>0){
+tranformedArray.push(arrayD);
+}
+if(arrayE[1]>0){
+tranformedArray.push(arrayE);
+}
+if(arrayF[1]>0){
+tranformedArray.push(arrayF);
+}
+if(arrayG[1]>0){
+tranformedArray.push(arrayG);
+}
+if(arrayH[1]>0){
+tranformedArray.push(arrayH);
+}
+ 
+if(arrayI[1]>0){
+tranformedArray.push(arrayI);
+}
+  console.log(tranformedArray);
+  let open={status: "OPEN", change:tranformedArray};
+  return open;
+}
+
+
+
+  
+ 
+ 
+  
+}
+
+checkCashRegister(3.26, 100, [["PENNY", 1.01], ["NICKEL", 2.05], ["DIME", 3.1], ["QUARTER", 4.25], ["ONE", 90], ["FIVE", 55], ["TEN", 20], ["TWENTY", 60], ["ONE HUNDRED", 100]]);
