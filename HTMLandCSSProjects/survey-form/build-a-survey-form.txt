@@ -1,0 +1,159 @@
+** start of undefined **
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta harset="utf-8"/>
+<meta name="viewport" content="width=device-width initial-scale=1.0 "/>
+<title>Survey Form</title>
+<link rel="stylesheet" href="styles.css">
+
+</head>
+<body>
+<h1 id="title">freeCodeCamp Survey Form</h1>
+<p id="description">Thank you for taking the time to help us improve the platform</p>
+<form id="survey-form">
+  <fieldset>
+<label id="name-label">Name
+<input required placeholder="Enter your name"  id="name" type="text"/>
+
+</label>
+<label id="email-label">Email
+  <input required placeholder="Enter your email"  id="email" name="email" type="email"/>
+  </label>
+  <label id="number-label">Age(optional)
+    <input min="18" max="120" placeholder="Age" id="number" type="number" name="number" />
+  </label>
+</fieldset>
+<label>
+<select name="selection" id="dropdown">
+<option value="">Select current role</option>
+<option value="1">Student</option>
+<option value="2">Full Time Job</option>
+<option value="3">Full Time Learner</option>
+<option value="4">Prefer not to say</option>
+<option value="5">Other</option>
+  </select>
+  </label>
+<fieldset>
+<legend>Would you recommend freeCodeCamp to a friend?</legend>
+<label><input class="radiob" value="yes" name="radiobutton" type="radio" id="yes"/>yes</label>
+<label><input class="radiob" value="of course" name="radiobutton" type="radio" id="of course"/>of course</label>
+<label><input class="radiob" value="sure" name="radiobutton" type="radio" id="sure"/>sure
+</label>
+</fieldset>
+<label><input id="checkbox1" value="Front-end Projects" type="checkbox" class="checkbox" name="Front-end Projects"/>Front-end Projects</label>
+<label><input id="checkbox2" value="Back-end Projects" type="checkbox" class="checkbox" name="Back-end Projects"/>Back-end Projects</label> 
+<label><input id="checkbox3" value="Data Visualization" type="checkbox" class="checkbox" name="Data Visualization"/>Data Visualization</label> 
+<label><input id="checkbox4" value="Challenges" type="checkbox" class="checkbox" name="Challenges"/>Challenges</label> 
+<label><input id="checkbox5" value="Open Source Community" type="checkbox" class="checkbox" name="Open Source Community"/>Open Source Community</label> 
+<label><input id="checkbox6" value="Gitter help rooms" type="checkbox" class="checkbox" name="Gitter help rooms"/>Gitter help rooms</label> 
+<label><input id="checkbox7" value="Videos" type="checkbox" class="checkbox" name="Videos"/>Videos</label> 
+<label><input id="checkbox8" value="City Meetups" type="checkbox" class="checkbox" name="City Meetups"/>City Meetups</label> 
+<label><input id="checkbox9" value="Wiki" type="checkbox" class="checkbox" name="Wiki"/>Wiki</label> 
+<label><input id="checkbox10" value="Forum" type="checkbox" class="checkbox" name="Forum"/>Forum</label> 
+<label><input id="checkbox11" value="Additional Courses" type="checkbox" class="checkbox" name="Additional Courses"/>Additional Courses</label> 
+<label class="special">Any comments or suggestions?<textarea name="comments" cols="30" rows="5" placeholder=" comment here.."></textarea></label>
+<label>
+<input id="submit" type="submit" value="Submit">
+</label>
+</form>
+ </body> 
+
+  </html>
+
+** end of undefined **
+
+** start of undefined **
+
+h1,p{
+ text-align: center;
+ font-family: "papyrus";
+ color:rgba(255, 255, 255, 0.96)
+ 
+}
+body{
+background: linear-gradient(90deg, rgb(0, 0, 255), rgb(0, 0, 50), rgb(0, 0, 255));
+  box-shadow: 0 0 20px 0 rgba(83, 14, 14, 0.8);
+
+
+}
+label {
+  display: block;
+	margin: 0.5rem 0;
+  color:white;
+}
+input{
+ margin: 10px 0 0 0;
+	width: 100%;
+  min-height: 2em;
+  background-color:rgb(0,14,125);
+ color:rgb(255,255,255);
+}
+form {
+  width: 60vw;
+	max-width: 500px;
+	min-width: 300px;
+	margin: 0 auto;
+  padding-bottom: 2em;
+	background-color:rgba(130, 220, 223, 0.706);
+   box-shadow: 0 0 30px 0 blue;
+}
+
+.radiob{
+
+	width: unset;
+	 margin: 0 0.5em 0 0;
+  vertical-align: middle;
+}
+.checkbox{
+
+	width: unset;
+	 margin: 0 0.5em 0 0;
+  vertical-align: middle;
+}
+
+legend{
+margin:  0 0.5em 0 0 ;
+color:rgb(240,240,240);
+
+}
+fieldset {
+  border: none;
+  padding: 2rem 0;
+  border-bottom: 3px solid rgba(217, 255, 171, 0.9);
+}
+::placeholder {
+color:rgb(240,240,240);
+}
+select {
+  margin: 0 0 0 10%;
+	width: 80%;
+  min-height: 2em;
+   text-align: center;
+   border:none;
+   
+}
+textarea{
+  margin: 0 0 0 %;
+   background-color: #2525c2;
+  border: 1px solid #0a0a23;
+  color:rgba(238, 226, 226, 0.816);
+}
+input[type="submit"] {
+  display: block;
+  width: 40%;
+  margin: 2em auto;
+  height: 2em;
+  font-size: 1.1rem;
+  background-color: #4949c5;
+  border-color: rgb(74, 104, 126);
+  min-width: 270px;
+}
+.special{
+
+  text-align: center;
+}
+
+** end of undefined **
+

@@ -1,0 +1,229 @@
+** start of undefined **
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product Langind Page</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header id="header">
+      
+      <img id="header-img" src="https://cdn.freecodecamp.org/testable-projects-fcc/images/product-landing-page-logo.png"alt="page logo" loading="lazy" class="logo-img"/>
+       <nav id="nav-bar">
+          <ul class="footer">
+              
+    <li><a class="nav-link" href="#Features">Features</a></li>
+      <li><a class="nav-link" href="#How_It_Works">How It Works
+</a></li>
+      <li><a class="nav-link" href="#Pricing">Pricing</a></li>
+          </ul>
+         </nav>
+    </header>
+<main>
+ 
+  <form id="form" action="https://www.freecodecamp.com/email-submit">
+   <h1 class="inputh">Handcrafted, home-made masterpieces</h1>
+          <input name="email" id="email" type="email" placeholder="Enter your email address" required="">
+          <input id="submit" type="submit" value="submit" class="button">
+        </form>
+  
+  <section id="Features">
+  
+    <h2>Premium Materials</h2>
+  <p>Our trombones use the shiniest brass which is sourced locally. This will increase the longevity of your purchase.
+
+</p>
+  <h2>Fast Shipping
+</h2>
+  <p>We make sure you recieve your trombone as soon as we have finished making it. We also provide free returns if you are not satisfied.
+
+</p>
+  <h2>Quality Assurance
+</h2>
+  <p>For every purchase you make, we will ensure there are no damages or faults and we will check and test the pitch of your instrument.
+
+</p>
+    </section>
+    <section id="How_It_Works">
+      <iframe id="video"  src="https://www.youtube.com/embed/y8Yv4pnO7qc" >
+        
+        
+      </iframe>
+      </section>
+      <section id="Pricing">
+        <div class="tier">
+          <div class="price"><h2>TENOR TROMBONE</h2></div>
+          <h1>$600</h1>
+          <ul>
+            <li>Lorem ipsum.</li>
+            <li>Lorem ipsum.</li>
+            
+          </ul>
+          <button class="btn">Select</button>
+        </div>
+        <div class="tier">
+          <div class="price"><h2>BASS TROMBONE</h2></div>
+          <h1>$900</h1>
+          <ul>
+            <li>Lorem ipsum dolor.</li>
+            <li>Lorem ipsum dolor.</li>
+        
+          </ul>
+          <button class="btn">Select</button>
+        </div>
+        <div class="tier">
+          <div class="price"><h2>VALVE TROMBONE</h2></div>
+          <h1>$1200</h1>
+          <ul>
+            <li>Plays similar to a Trumpet</li>
+            <li>Plays similar to a Trumpet</li>
+           
+          </ul>
+          <button class="btn">Select</button>
+        </div>
+        </section>
+        <footer>
+<ul class="footer">
+  <li><a href="#">Privacy</a></li>
+  <li><a href="#">Terms
+</a></li>
+  <li><a href="#">Contact</a></li>
+</ul>
+<span>Copyright 2016, Original Trombones</span>
+
+        </footer>
+    </main>
+  </body>
+  
+  </html>
+
+** end of undefined **
+
+** start of undefined **
+
+@media only screen and (max-width: 600px) {
+  body {
+    background-color: lightblue;
+  }
+}
+  #how-it-works {
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+}
+  img{
+    width:500px;
+    height:50px;
+    
+  }
+  iframe{
+    width:10%;
+    min-width:500px;
+    height:300px;
+    
+  
+  }
+  
+  section{
+     margin: auto;
+  width: 40%;
+  display:block;
+  padding: 10px;
+text-align: left;
+ 
+  }
+  .tier{
+    border:solid;
+    display:inline-block;
+    flex-direction: column;
+    border-width:thin;
+     border-radius: 0 0 10px 10px;
+     margin:25px;
+    
+  }
+  .price{
+    
+    text-align:center;
+    background-color: rgb(150, 146, 146);
+  }
+  li{
+    list-style: none;
+    
+  }
+  .footer{
+    display:flex;
+   justify-content: flex-end;
+    
+    
+  }
+  .footer li{
+    padding: 0 10px;
+   
+  }
+  
+  footer{
+    background-color:rgb(211, 205, 205);
+    width:800px;
+    margin: auto;
+ text-align: right;
+ 
+ 
+  }
+  header {
+  width: 100%;
+	height: 50px;
+	background-color: #7a7af8;
+	display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+}
+form{
+  padding:100px;
+  
+}
+
+input{
+  display:flex;
+  margin-right: auto;
+  margin-left: auto;
+  text-align:center;
+}
+.inputh{
+  text-align:center;
+   font-size: 30px;
+}
+#submit{
+  
+ background-color: #fff700;
+ width:100px;
+ border-radius:25px;
+
+}
+a{
+  color:white;
+}
+.btn{
+   display:flex;
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom:10px;
+  width:40%;
+  background-color:yellow;
+  border:none;
+}
+section{
+  display:flex;
+  flex-direction: row;
+flex-wrap: wrap;
+flex: 1 0 10%;
+}
+
+** end of undefined **
+
