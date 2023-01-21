@@ -1,0 +1,19 @@
+function palindrome(str) {
+  let noAlpha=str.replace(/[^0-9a-z]/gi, '');
+  let lowerCase=noAlpha.toLowerCase();
+  let length=lowerCase.length;
+  for(let i=0;i<length;i++)
+  {
+    if(lowerCase[i]==lowerCase[length-1-i])
+    {
+
+    }
+    else
+    {
+      return false;
+    }
+  }  
+  return true;
+}
+
+palindrome("eye");
