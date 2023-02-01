@@ -1,0 +1,94 @@
+const ADD = 'ADD';
+const DELETE='DELETE';
+const addMessage = (message) => {
+  return {
+    type: ADD,
+    message: message
+  }
+};
+const deleteMessage = (id) => {
+  return {
+    type: DELETE,
+    id: id
+  }
+};
+const messageReducer = (state = [], action) => {
+  switch (action.type) {
+    case ADD:
+      return [
+        ...state,
+        action.message
+      ];
+    case DELETE:
+      return [...state.slice(0,action.id),...state.slice(action.id+1,state.length)];
+    default:
+      return state;
+  }
+};
+
+const store = Redux.createStore(messageReducer);
+
+
+const App =({messages,submitNewMessage,deleteMessege})=> {
+ const [input,setInput]=React.useState('');
+
+  const handleChange=(event)=> {
+   setInput(event.target.value);
+  }
+ const  submitMessage=()=>{
+    submitNewMessage(input);
+     setInput('');
+  };
+ const deleteMessage=(idx)=>{
+    deleteMessege(idx);
+ };
+    return (
+      <div>
+        <h2>Type in a new Message:</h2>
+        <input
+          value={input}
+          onChange={handleChange}/><br/>
+        <button onClick={submitMessage}>Submit</button>
+        <ul>
+          {messages.map( (message, idx) => {
+              return (
+                <div><button onClick={()=>deleteMessage(idx)}>delete:</button> <li key={idx}>{message}</li></div>
+              )
+            })
+          }
+        </ul>
+      </div>
+    );
+  
+};
+
+const mapStateToProps = (state) => {
+  return {messages: state}
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    submitNewMessage: (message) => {
+      dispatch(addMessage(message))
+    },
+    deleteMessege:(idx)=>{
+      dispatch(deleteMessage(idx))
+    }
+  }
+};
+const Provider = ReactRedux.Provider;
+const connect = ReactRedux.connect;
+const Container = connect(mapStateToProps, mapDispatchToProps)(App);
+
+class AppWrapper extends React.Component {
+  render() {
+    return (
+      <Provider store={store}>
+        <Container/>
+      </Provider>
+    );
+  }
+};
+
+
+ReactDOM.render(<AppWrapper/>,document.getElementById('app'))
